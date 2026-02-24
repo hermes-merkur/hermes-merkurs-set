@@ -4,174 +4,220 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Hermes & Merkür SET</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
 <style>
 body{
     margin:0;
-    font-family:'Poppins', sans-serif;
-    background:#0f0f0f;
+    font-family:Arial, sans-serif;
+    background:#000;
     color:white;
 }
-<header>
-    <img src="A_vector-style_digital_illustration_logo_for_Herme.png" alt="Hermes & Merkür SET Logo" style="width:220px; max-width:80%; display:block; margin:0 auto 20px;">
-    <h1>HERMES & MERKÜR SET</h1>
-    <p class="slogan">Geleceğin Üretimi, Elinizde.</p>
-    <a class="button" href="https://wa.me/905050441707" target="_blank">
-        WhatsApp ile Sipariş Ver
-    </a>
-</header>
+
+header{
+    background:#000;
+    padding:15px;
+    position:fixed;
+    width:100%;
+    top:0;
+    z-index:1000;
+    border-bottom:1px solid gold;
 }
-h1{
-    color:#d4af37;
-    font-size:34px;
+
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
 }
-.slogan{
-    color:#aaa;
+
+nav a{
+    color:gold;
+    text-decoration:none;
+    margin:0 10px;
+    font-weight:bold;
 }
-.button{
+
+.logo{
+    font-size:20px;
+    color:gold;
+    font-weight:bold;
+}
+
+.hero{
+    padding-top:120px;
+    text-align:center;
+}
+
+.hero h1{
+    color:gold;
+    font-size:32px;
+}
+
+.btn{
     display:inline-block;
     margin-top:20px;
     padding:12px 25px;
-    border:2px solid #d4af37;
-    color:#d4af37;
-    text-decoration:none;
+    border:2px solid gold;
     border-radius:30px;
-    transition:0.3s;
+    color:gold;
+    text-decoration:none;
+    font-weight:bold;
 }
-.button:hover{
-    background:#d4af37;
-    color:black;
-}
+
 .section{
-    padding:50px 20px;
-    text-align:center;
+    padding:60px 20px;
 }
+
+.section h2{
+    text-align:center;
+    color:gold;
+    margin-bottom:30px;
+}
+
 .products{
     display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:25px;
+    overflow-x:auto;
+    gap:20px;
 }
+
 .card{
-    background:#1a1a1a;
-    border:1px solid #d4af37;
-    width:280px;
+    min-width:250px;
+    background:#111;
+    border:1px solid gold;
     border-radius:15px;
-    overflow:hidden;
-    transition:0.3s;
+    padding:15px;
+    text-align:center;
 }
-.card:hover{
-    transform:scale(1.05);
-}
+
 .card img{
     width:100%;
-    height:200px;
-    object-fit:cover;
+    border-radius:10px;
 }
-.card-content{
-    padding:15px;
-}
+
 .price{
-    color:#d4af37;
-    font-weight:bold;
+    color:gold;
+    font-size:18px;
     margin-top:10px;
 }
-.iban-box{
-    background:#1a1a1a;
-    border:1px solid #d4af37;
+
+.iban{
+    background:#111;
     padding:20px;
-    border-radius:15px;
-    display:none;
-    margin-top:20px;
+    border-radius:10px;
+    border:1px solid gold;
+    text-align:center;
 }
+
 footer{
     text-align:center;
-    padding:30px;
-    color:#777;
-    font-size:14px;
+    padding:20px;
+    border-top:1px solid gold;
+    margin-top:40px;
 }
 </style>
-
-<script>
-function toggleIban(){
-    var x = document.getElementById("iban");
-    if (x.style.display === "none") {
-        x.style.display = "block";
-    } else {
-        x.style.display = "none";
-    }
-}
-</script>
-
 </head>
+
 <body>
 
 <header>
-    <img src="A_vector-style_digital_illustration_logo_for_Herme.png" alt="Hermes & Merkür SET Logo" style="width:220px; max-width:80%; display:block; margin:0 auto 20px;">
-    <h1>HERMES & MERKÜR SET</h1>
-    <p class="slogan">Geleceğin Üretimi, Elinizde.</p>
-    <a class="button" href="https://wa.me/905050441707" target="_blank">
-        WhatsApp ile Sipariş Ver
-    </a>
+<nav>
+<div class="logo">HERMES & MERKÜR SET</div>
+<div>
+<a href="#urunler">Ürünler</a>
+<a href="#odeme">Ödeme</a>
+<a href="https://instagram.com/" target="_blank">Instagram</a>
+</div>
+</nav>
 </header>
 
-<section class="section">
-    <h2 style="color:#d4af37;">Ürünlerimiz</h2>
-    <div class="products">
-
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1603314585442-ee3b3c16fbcf" alt="iPhone Kılıf">
-            <div class="card-content">
-                <h3>iPhone 15 TPU Kılıf</h3>
-                <p>Esnek ve dayanıklı özel üretim.</p>
-                <div class="price">179₺</div>
-            </div>
-        </div>
-
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1585386959984-a41552231658" alt="Telefon Kılıf">
-            <div class="card-content">
-                <h3>Oppo Reno 7 Kılıf</h3>
-                <p>Şık tasarım, güçlü koruma.</p>
-                <div class="price">159₺</div>
-            </div>
-        </div>
-
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1593642634367-d91a135587b5" alt="3D Stand">
-            <div class="card-content">
-                <h3>Kişiye Özel Stand</h3>
-                <p>İsimli ve özel tasarım baskı.</p>
-                <div class="price">129₺</div>
-            </div>
-        </div>
-
-    </div>
+<section class="hero">
+<h1>Geleceğin Üretimi Elinizde</h1>
+<a href="https://wa.me/905000000000" class="btn">WhatsApp ile Sipariş Ver</a>
 </section>
 
-<section class="section">
-    <h2 style="color:#d4af37;">Hakkımızda</h2>
-    <p style="max-width:700px;margin:auto;color:#ccc;">
-        Yıllarca FİKİR ÜRETTİK. Şimdi üretim bizim elimizde.ÜRETMEK KADAR GÜZEL BİR ŞEY YOKTUR.
-        Hermes & Merkür SET, emeğin dijital dönüşümüdür.
-        Kaliteli 3D baskı ürünleri uygun fiyatla sunuyoruz.CANLI ORGANİZMA ÜRETİMİ HAYALİNİ GERÇEKLEŞTİRMEMİZ İÇİN DESTEKLERİNİZE İHTİYACIMIZ VAR.
-    </p>
-</section>
+<section class="section" id="urunler">
+<h2>Ürünlerimiz</h2>
 
-<section class="section">
-    <h2 style="color:#d4af37;">Destek Ol</h2>
-    <button class="button" onclick="toggleIban()">IBAN Göster</button>
+<div class="products">
 
-    <div class="iban-box" id="iban">
-    <p><strong>Hesap Sahibi:</strong> Ufuk Argun</p>
-    <p><strong>Banka:</strong> Ziraat Bankası</p>
-    <p><strong>IBAN:</strong> TR37 0001 0004 5970 2699 3350 10</p>
+<div class="card">
+<img src="https://picsum.photos/300?1">
+<h3>iPhone 15 Kılıf</h3>
+<div class="price">299 TL</div>
+</div>
+
+<div class="card">
+<img src="https://picsum.photos/300?2">
+<h3>Redmi Note 8 Kılıf</h3>
+<div class="price">249 TL</div>
+</div>
+
+<div class="card">
+<img src="https://picsum.photos/300?3">
+<h3>Şeffaf TPU Kılıf</h3>
+<div class="price">199 TL</div>
+</div>
+
+<div class="card">
+<img src="https://picsum.photos/300?4">
+<h3>Telefon Standı</h3>
+<div class="price">149 TL</div>
+</div>
+
+<div class="card">
+<img src="https://picsum.photos/300?5">
+<h3>Araç Telefon Tutucu</h3>
+<div class="price">179 TL</div>
+</div>
+
+<div class="card">
+<img src="https://picsum.photos/300?6">
+<h3>Kabartmalı Özel Kılıf</h3>
+<div class="price">329 TL</div>
+</div>
+
+<div class="card">
+<img src="https://picsum.photos/300?7">
+<h3>Manyetik Telefon Standı</h3>
+<div class="price">189 TL</div>
+</div>
+
+<div class="card">
+<img src="https://picsum.photos/300?8">
+<h3>Kamera Koruyucu Set</h3>
+<div class="price">99 TL</div>
+</div>
+
+<div class="card">
+<img src="https://picsum.photos/300?9">
+<h3>3D Baskı Özel Tasarım</h3>
+<div class="price">349 TL</div>
+</div>
+
+<div class="card">
+<img src="https://picsum.photos/300?10">
+<h3>Kişiye Özel İsimli Kılıf</h3>
+<div class="price">299 TL</div>
+</div>
+
 </div>
 </section>
 
+<section class="section" id="odeme">
+<h2>Ödeme Bilgileri</h2>
+
+<div class="iban">
+<p><strong>Banka:</strong> Ziraat Bankası</p>
+<p><strong>Alıcı:</strong> Ufuk Argun</p>
+<p><strong>IBAN:</strong> TR37 0001 0004 5970 2699 3350 10</p>
+</div>
+
+</section>
+
 <footer>
-    © 2026 Hermes & Merkür SET - Tüm Hakları Saklıdır.
+<p>© 2026 Hermes & Merkür SET</p>
 </footer>
 
 </body>
 </html>
+    © 2026 Hermes & Merkür SET - Tüm Hakları Saklıdır.
+
