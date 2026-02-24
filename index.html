@@ -238,7 +238,7 @@ footer{
     İsterseniz aşağıdaki buton ile IBAN bilgimize ulaşabilirsiniz.
   </p>
 
-  <button onclick="document.getElementById('ibanBox').style.display='block'"
+ <button onclick="destekOl()"
     style="margin-top:20px; padding:15px 30px; background:gold; border:none; font-size:18px; font-weight:bold; cursor:pointer; border-radius:8px;">
     💛 Destek Ol
   </button>
@@ -248,8 +248,114 @@ footer{
     <p><strong>Banka:</strong> Ziraat Bankası</p>
     <p><strong>IBAN:</strong> TR37 0001 0004 5970 2699 3350 10</p>
   </div>
+<section style="padding:30px; background:#111; text-align:center; color:white;">
+
+  <h2 style="color:gold;">Topluluk Gücü</h2>
+
+  <p style="font-size:20px;">
+    👥 Toplam Ziyaretçi: 
+    <span id="visitorCount" style="color:gold; font-weight:bold;"></span>
+  </p>
+
+  <p style="font-size:20px;">
+    💛 Toplam Destekçi: 
+    <span id="donationCount" style="color:gold; font-weight:bold;"></span>
+  </p>
 
 </section>
+
+<script>
+if (!localStorage.getItem("visitorCount")) {
+  localStorage.setItem("visitorCount", 1000);
+} else {
+  let count = parseInt(localStorage.getItem("visitorCount"));
+  localStorage.setItem("visitorCount", count + 1);
+}
+
+if (!localStorage.getItem("donationCount")) {
+  localStorage.setItem("donationCount", 10);
+}
+
+document.getElementById("visitorCount").innerText = localStorage.getItem("visitorCount");
+document.getElementById("donationCount").innerText = localStorage.getItem("donationCount");
+</script>
+</section>
+<script>
+function destekOl() {
+  document.getElementById('ibanBox').style.display = 'block';
+
+  let donationCount = parseInt(localStorage.getItem("donationCount")) || 10;
+  donationCount++;
+  localStorage.setItem("donationCount", donationCount);
+
+  document.getElementById("donationCount").innerText = donationCount;
+}
+</script>
+    <section style="padding:40px; background:black; color:white; text-align:center;">
+  <h2 style="color:gold;">Sipariş Ver</h2>
+
+  <input id="isim" placeholder="Ad Soyad" style="padding:10px; margin:5px;"><br>
+  <input id="telefon" placeholder="Telefon" style="padding:10px; margin:5px;"><br>
+  <input id="urun" placeholder="Sipariş Edilen Ürün" style="padding:10px; margin:5px;"><br>
+  <textarea id="mesaj" placeholder="Mesajınız" style="padding:10px; margin:5px;"></textarea><br>
+
+  <button onclick="siparisGonder()" style="padding:12px 25px; background:gold; border:none; font-weight:bold;">
+    Sipariş Gönder
+  </button>
+
+  <p id="siparisSonuc" style="margin-top:15px;"></p>
+</section>
+
+<script>
+function siparisGonder() {
+  let isim = document.getElementById("isim").value;
+  let urun = document.getElementById("urun").value;
+
+  if(isim === "" || urun === "") {
+    document.getElementById("siparisSonuc").innerText = "Lütfen gerekli alanları doldurun.";
+    return;
+  }
+
+  document.getElementById("siparisSonuc").innerText = "Siparişiniz alınmıştır. En kısa sürede dönüş yapılacaktır.";
+}
+</script>
+    <section style="padding:40px; background:#111; color:white; text-align:center;">
+  <h2 style="color:gold;">Ziyaretçi Yorumları</h2>
+
+  <input id="yorumIsim" placeholder="Adınız" style="padding:10px; margin:5px;"><br>
+  <textarea id="yorumMesaj" placeholder="Yorumunuz" style="padding:10px; margin:5px;"></textarea><br>
+
+  <button onclick="yorumEkle()" style="padding:12px 25px; background:gold; border:none; font-weight:bold;">
+    Yorum Yap
+  </button>
+
+  <div id="yorumlar" style="margin-top:20px;"></div>
+</section>
+
+<script>
+if(!localStorage.getItem("yorumlar")){
+  localStorage.setItem("yorumlar", "");
+}
+
+document.getElementById("yorumlar").innerHTML = localStorage.getItem("yorumlar");
+
+function yorumEkle(){
+  let isim = document.getElementById("yorumIsim").value;
+  let mesaj = document.getElementById("yorumMesaj").value;
+
+  if(isim === "" || mesaj === "") return;
+
+  let yeniYorum = "<p><strong>" + isim + ":</strong> " + mesaj + "</p>";
+
+  let mevcut = localStorage.getItem("yorumlar");
+  localStorage.setItem("yorumlar", mevcut + yeniYorum);
+
+  document.getElementById("yorumlar").innerHTML = localStorage.getItem("yorumlar");
+
+  document.getElementById("yorumIsim").value = "";
+  document.getElementById("yorumMesaj").value = "";
+}
+</script>
 </body>
 </html>
     © 2026 Hermes & Merkür SET - Tüm Hakları Saklıdır.
